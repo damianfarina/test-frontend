@@ -36,3 +36,14 @@ For example:
 ```
 
 ###### Please fork this repository and commit each step of your process.
+
+## Installation
+Install dependencies
+```
+npm install
+```
+
+Run the server
+```
+gulp
+```
