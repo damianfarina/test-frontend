@@ -2,11 +2,38 @@ doctype
 html
   head
     title Resume
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Montserrat:400,700', type='text/css')
     link(rel='stylesheet', href='/stylesheets/styles.css')
     script(type='text/javascript', src='/scripts/vendor.js')
     script(type='text/javascript', src='/scripts/scripts.js')
   body
-    h1 Resume
-    p
-      | Some text
-      | in 1 line.
+    .container
+      .sidebar
+        .summary
+          .avatar
+            img(src='/images/profile.jpg')
+            img.flag(src='/images/flag.png')
+          .name
+            | Damián Farina
+          .title
+            | Software Engineer
+          .location
+            | Mendoza, Argentina
+          .boxes
+            .box
+              strong
+                | 33
+              br
+              | y/o
+            .box
+              strong
+                | 11
+              br
+              | y/experience
+            .box
+              strong
+                | ?
+              br
+              | projects delivered
+      .content
+        | This is the content area
