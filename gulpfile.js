@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     coffee = require('gulp-coffee'),
     gutil = require('gulp-util'),
     concat = require('gulp-concat'),
+    imagemin = require('gulp-imagemin'),
     browserSync = require('browser-sync').create();
 
 var paths = {
@@ -19,6 +20,8 @@ var paths = {
   templatesDestination: 'public/',
   scriptsSource: 'src/scripts/',
   scriptsDestination: 'public/scripts/',
+  imagesSource: 'src/images/',
+  imagesDestination: 'public/images/',
   tmp: '.tmp/'
 };
 
@@ -35,9 +38,15 @@ gulp.task('default', ['build-all'], function(){
   gulp.watch(paths.scriptsSource + '**/*.coffee', ['scripts']);
 });
 
-gulp.task('build-all', ['styles', 'templates', 'scripts']);
+gulp.task('build-all', ['styles', 'templates', 'scripts', 'images']);
 
 gulp.task('scripts', ['scripts:vendor', 'coffee', 'concat']);
+
+gulp.task('images', function() {
+  return gulp.src(paths.imagesSource + '*')
+    .pipe(imagemin())
+    .pipe(gulp.dest(paths.imagesDestination));
+});
 
 gulp.task('coffee', function() {
   return gulp.src(paths.scriptsSource + '**/*.coffee')
