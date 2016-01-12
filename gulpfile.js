@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     concat = require('gulp-concat'),
     imagemin = require('gulp-imagemin'),
+    del = require('del')
     browserSync = require('browser-sync').create();
 
 var paths = {
@@ -22,7 +23,7 @@ var paths = {
   scriptsDestination: 'public/scripts/',
   imagesSource: 'src/images/',
   imagesDestination: 'public/images/',
-  tmp: '.tmp/'
+  dist: 'public'
 };
 
 gulp.task('default', ['build-all'], function(){
@@ -36,11 +37,16 @@ gulp.task('default', ['build-all'], function(){
   gulp.watch(paths.cssSource + '**/*.styl', ['styles']);
   gulp.watch(paths.templatesSource + '**/*.jade', ['templates']);
   gulp.watch(paths.scriptsSource + '**/*.coffee', ['scripts']);
+  gulp.watch(paths.imagesSource + '**/*', ['images']);
 });
 
 gulp.task('build-all', ['styles', 'templates', 'scripts', 'images']);
 
-gulp.task('scripts', ['scripts:vendor', 'coffee', 'concat']);
+gulp.task('scripts', ['vendor', 'coffee']);
+
+gulp.task('clean', function () {
+  return del([paths.dist + '**/*']);
+});
 
 gulp.task('images', function() {
   return gulp.src(paths.imagesSource + '*')
@@ -50,11 +56,15 @@ gulp.task('images', function() {
 
 gulp.task('coffee', function() {
   return gulp.src(paths.scriptsSource + '**/*.coffee')
+    .pipe(sourcemaps.init())
     .pipe(coffee({bare: true}).on('error', gutil.log))
-    .pipe(gulp.dest(paths.tmp + paths.scriptsSource));
+    .pipe(concat('scripts.js'))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(paths.scriptsDestination))
+    .pipe(browserSync.stream());
 });
 
-gulp.task('scripts:vendor', function(callback) {
+gulp.task('vendor', function(callback) {
   return gulp.src([
       './node_modules/jquery/dist/jquery.js'
     ])
@@ -64,18 +74,9 @@ gulp.task('scripts:vendor', function(callback) {
     .pipe(gulp.dest(paths.scriptsDestination));
 });
 
-gulp.task('concat', function() {
-  return gulp.src(paths.tmp + paths.scriptsSource + '**/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(concat('scripts.js'))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.scriptsDestination))
-    .pipe(browserSync.stream());
-});
-
 gulp.task('templates', function() {
   return gulp.src(paths.templatesSource + '**/*.jade')
-    .pipe(jade())
+    .pipe(jade().on('error', gutil.log))
     .pipe(gulp.dest(paths.templatesDestination))
     .pipe(browserSync.stream());
 });
