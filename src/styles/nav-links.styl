@@ -1,0 +1,55 @@
+ul.nav-links
+  margin 0
+  padding 0
+  list-style none
+
+  li
+    border-bottom border-specs
+
+  a
+    transition transitions-delay
+
+    position relative
+
+    opacity 0.4
+    icon-width = 36px
+    icon-text-gap = 14px
+
+    display inline-block
+    box-sizing border-box
+    width 100%
+    padding 25px
+    padding-left "calc(11% + %s)" % (icon-width + icon-text-gap)
+    padding-right 5px
+
+    color menu-link-color
+    text-decoration none
+    font-size font-size-big
+    font-weight 700
+
+    &:hover
+      transition transitions-delay
+      opacity 1
+      background-color active-link-bg-color
+
+    &:before
+      content ""
+      position absolute
+      left 11%
+      top 20px
+      width 36px
+      height 33px
+      background-image url('/images/icons.png')
+      background-repeat no-repeat
+
+    &.about:before
+      background-position 0 4px
+
+    &.education:before
+      background-position 0 -79px
+
+    &.experience:before
+      background-position 0 -164px
+
+    &.skills:before
+      background-position 0 -248px
