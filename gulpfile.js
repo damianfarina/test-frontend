@@ -11,7 +11,8 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     concat = require('gulp-concat'),
     imagemin = require('gulp-imagemin'),
-    del = require('del')
+    del = require('del'),
+    ghPages = require('gulp-gh-pages'),
     browserSync = require('browser-sync').create();
 
 var paths = {
@@ -96,4 +97,9 @@ gulp.task('styles', function() {
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.cssDestination))
     .pipe(browserSync.stream());
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('./public/**/*')
+    .pipe(ghPages());
 });

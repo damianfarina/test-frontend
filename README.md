@@ -47,3 +47,5 @@ Run the server
 ```
 gulp
 ```
+
+*Visit http://damianfarina.github.io/test-frontend for a demo*
