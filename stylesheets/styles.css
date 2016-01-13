@@ -341,7 +341,7 @@ ul.nav-links a:before {
   top: 20px;
   width: 36px;
   height: 33px;
-  background-image: url("/images/icons.png");
+  background-image: url("../images/icons.png");
   background-repeat: no-repeat;
 }
 ul.nav-links a.about:before {
@@ -390,7 +390,7 @@ ul.nav-links a.skills:before {
 .summary .location {
   font-family: 'Montserrat', sans-serif;
   font-weight: normal;
-  background-image: url("/images/location.png");
+  background-image: url("../images/location.png");
   background-repeat: no-repeat;
   padding-left: 25px;
   font-style: italic;
