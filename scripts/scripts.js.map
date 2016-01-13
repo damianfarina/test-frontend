@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.coffee"],"names":[],"mappings":"AAAA,CAAA,CAAE,SAAA;SACA,OAAO,CAAC,GAAR,CAAY,cAAZ;AADA,CAAF","file":"scripts.js","sourcesContent":["$ ->\n  console.log(\"DOM is ready\")\n"],"sourceRoot":"/source/"}
