@@ -76,7 +76,7 @@ gulp.task('vendor', function(callback) {
 });
 
 gulp.task('templates', function() {
-  return gulp.src(paths.templatesSource + '**/*.jade')
+  return gulp.src(paths.templatesSource + '*.jade')
     .pipe(jade().on('error', gutil.log))
     .pipe(gulp.dest(paths.templatesDestination))
     .pipe(browserSync.stream());
