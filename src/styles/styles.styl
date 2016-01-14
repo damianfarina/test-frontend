@@ -4,6 +4,7 @@ normalize-css()
 @import layout
 @import boxes
 @import nav-links
+@import footer
 @import index
 
 body
@@ -12,8 +13,7 @@ body
   font-size font-size-base
 
 ul.list
-  padding-left 0
-  list-style none
+  @extend .unstyled-list
 
   li:before
     content "\2666"

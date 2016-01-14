@@ -1,0 +1,38 @@
+footer
+  padding sidebar-padding
+
+  .contact
+    @extend .unstyled-list
+    a
+      icon-width = 23px
+      icon-text-gap = 5px
+
+      position relative
+      display inline-block
+      box-sizing border-box
+      width 100%
+      padding: 5px 5px 5px icon-width + icon-text-gap
+
+      text-decoration none
+      color links-color
+
+      &:before
+        content ""
+        position absolute
+        left 0
+        width 23px
+        height 20px
+        background-image url('../images/contact-icons.png')
+        background-repeat no-repeat
+
+      &.email:before
+        background-position-y 0
+
+      &.twitter:before
+        background-position-y -69px
+
+      &.linkedin:before
+        background-position-y -98px
+
+      &.github:before
+        background-position-y -34px
