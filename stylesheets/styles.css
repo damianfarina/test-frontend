@@ -258,7 +258,6 @@ ul.list {
 }
 .languages {
   *zoom: 1;
-  margin-top: 2em;
 }
 .languages:before {
   content: '';
@@ -271,6 +270,7 @@ ul.list {
 }
 .languages img {
   width: calc(99.99% * 1/4 - (30px - 30px * 1/4));
+  max-width: 200px;
 }
 .languages img:nth-child(n) {
   float: left;
@@ -284,6 +284,36 @@ ul.list {
   margin-right: 0;
 }
 .languages img:nth-child(4n + 1) {
+  clear: left;
+}
+.map {
+  *zoom: 1;
+}
+.map:before {
+  content: '';
+  display: table;
+}
+.map:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.map img {
+  width: calc(99.99% * 1/1 - (30px - 30px * 1/1));
+  max-width: 890px;
+}
+.map img:nth-child(n) {
+  float: left;
+  margin-right: 30px;
+  clear: none;
+}
+.map img:last-child {
+  margin-right: 0;
+}
+.map img:nth-child(1n) {
+  margin-right: 0;
+}
+.map img:nth-child(1n + 1) {
   clear: left;
 }
 .boxes {
@@ -412,16 +442,43 @@ footer .contact a:before {
   background-repeat: no-repeat;
 }
 footer .contact a.email:before {
-  background-position-y: 0;
+  background-position: 0 0;
 }
 footer .contact a.twitter:before {
-  background-position-y: -69px;
+  background-position: 0 -69px;
 }
 footer .contact a.linkedin:before {
-  background-position-y: -98px;
+  background-position: 0 -98px;
 }
 footer .contact a.github:before {
-  background-position-y: -34px;
+  background-position: 0 -34px;
+}
+.legend {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+.legend li {
+  display: inline-block;
+  padding-right: 30px;
+  padding-left: 5px;
+  position: relative;
+  padding-left: 30px;
+}
+.legend li:before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/legends.png");
+  background-repeat: no-repeat;
+}
+.legend li.worked:before {
+  background-position: 0 -23px;
+}
+.legend li.visited:before {
+  background-position: 0 0;
 }
 .sidebar:before {
   background-color: #fafafa;
@@ -472,6 +529,7 @@ footer .contact a.github:before {
 .content h2 {
   color: #646261;
   margin-top: 3em;
+  margin-bottom: 2em;
 }
 body {
   font-family: 'Montserrat', sans-serif;
