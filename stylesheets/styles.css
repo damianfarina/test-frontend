@@ -232,7 +232,7 @@ th {
 .content {
   width: calc(99.999999% * 8/12);
   box-sizing: border-box;
-  padding: 50px;
+  padding: 10px 50px;
 }
 .content:nth-child(n) {
   float: left;
@@ -255,6 +255,36 @@ ul.list {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.languages {
+  *zoom: 1;
+  margin-top: 2em;
+}
+.languages:before {
+  content: '';
+  display: table;
+}
+.languages:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.languages img {
+  width: calc(99.99% * 1/4 - (30px - 30px * 1/4));
+}
+.languages img:nth-child(n) {
+  float: left;
+  margin-right: 30px;
+  clear: none;
+}
+.languages img:last-child {
+  margin-right: 0;
+}
+.languages img:nth-child(4n) {
+  margin-right: 0;
+}
+.languages img:nth-child(4n + 1) {
+  clear: left;
 }
 .boxes {
   *zoom: 1;
@@ -312,6 +342,9 @@ ul.nav-links li {
   padding-left: 11%;
   -webkit-transition: 200ms;
   transition: 200ms;
+  opacity: 0.4;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40);
 }
 ul.nav-links li:hover {
   -webkit-transition: 200ms;
@@ -324,9 +357,6 @@ ul.nav-links li:hover {
 }
 ul.nav-links a {
   position: relative;
-  opacity: 0.4;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-  filter: alpha(opacity=40);
   display: inline-block;
   box-sizing: border-box;
   width: 100%;
@@ -435,6 +465,13 @@ footer .contact a.github:before {
   height: 19px;
   margin-top: 10px;
   font-weight: 100;
+}
+.content h1 {
+  margin-top: 3em;
+}
+.content h2 {
+  color: #646261;
+  margin-top: 3em;
 }
 body {
   font-family: 'Montserrat', sans-serif;
