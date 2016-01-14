@@ -4,10 +4,14 @@ ul.nav-links
   li
     border-bottom border-specs
     padding-left sidebar-padding
-
-  a
     transition transitions-delay
 
+    &:hover
+      transition transitions-delay
+      opacity 1
+      background-color active-link-bg-color
+
+  a
     position relative
 
     opacity 0.4
@@ -26,10 +30,7 @@ ul.nav-links
     font-size font-size-big
     font-weight 700
 
-    &:hover
-      transition transitions-delay
-      opacity 1
-      background-color active-link-bg-color
+
 
     &:before
       content ""
