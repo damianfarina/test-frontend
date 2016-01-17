@@ -34,6 +34,7 @@
     "jquery": "^2.2.0",
     "lost": "^6.6.3",
     "nib": "^1.1.0",
-    "poststylus": "^0.2.2"
+    "poststylus": "^0.2.2",
+    "rupture": "^0.6.1"
   }
 }

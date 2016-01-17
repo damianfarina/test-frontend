@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     lost = require('lost'),
     jade = require('gulp-jade'),
     nib = require('nib'),
+    rupture = require('rupture'),
     coffee = require('gulp-coffee'),
     gutil = require('gulp-util'),
     concat = require('gulp-concat'),
@@ -88,7 +89,7 @@ gulp.task('styles', function() {
     .pipe(stylus({
           paths:  ['node_modules'],
           import: ['nib'],
-          use: nib()
+          use: [nib(), rupture()]
         }))
     .pipe(postcss([
       lost(),
