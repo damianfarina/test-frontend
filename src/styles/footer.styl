@@ -4,14 +4,11 @@ footer
   .contact
     @extend .unstyled-list
     a
-      icon-width = 23px
-      icon-text-gap = 5px
-
       position relative
       display inline-block
       box-sizing border-box
       width 100%
-      padding: 5px 5px 5px icon-width + icon-text-gap
+      padding .5em 0 0 2.5rem
 
       text-decoration none
       color links-color
@@ -20,19 +17,20 @@ footer
         content ""
         position absolute
         left 0
-        width 23px
-        height 20px
-        background-image url('../images/contact-icons.png')
+        top .5rem
+        width 1.5rem
+        height 1.5rem
         background-repeat no-repeat
+        background-size contain
 
       &.email:before
-        background-position 0 0
+        background-image url('../images/email.png')
 
       &.twitter:before
-        background-position 0 -69px
+        background-image url('../images/twitter.png')
 
       &.linkedin:before
-        background-position 0 -98px
+        background-image url('../images/linkedin.png')
 
       &.github:before
-        background-position 0 -34px
+        background-image url('../images/github.png')

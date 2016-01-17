@@ -26,21 +26,25 @@
       bottom 0
       right 0
       width 14%
-      border 5px solid summary-bg-color
+      border .4rem solid summary-bg-color
 
   .location
+    position relative
     font-family 'Montserrat', sans-serif
     font-weight normal
-    padding-left 25px
+    padding-left 2rem
     font-style italic
     display inline-block
-    height 30px
-    margin-top 10px
+    margin-top 1rem
     font-weight 100
-    background-image url('../images/location.png')
-    background-repeat no-repeat
-    background-position 0 6px
 
-.content
-  h1
-    margin-top 3rem
+    &:before
+      content ""
+      position absolute
+      left 0
+      top .1rem
+      width 1.5rem
+      height 1.5rem
+      background-image url('../images/location.png')
+      background-repeat no-repeat
+      background-size contain

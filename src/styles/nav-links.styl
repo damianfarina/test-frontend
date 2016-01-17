@@ -14,15 +14,11 @@ ul.nav-links
 
   a
     position relative
-
-    icon-width = 36px
-    icon-text-gap = 14px
-
     display inline-block
     box-sizing border-box
     width 100%
-    padding 25px
-    padding-left icon-width + icon-text-gap
+    padding 2rem
+    padding-left 5rem
     padding-right 5px
 
     color menu-link-color
@@ -33,20 +29,20 @@ ul.nav-links
       content ""
       position absolute
       left 0
-      top 20px
-      width 36px
-      height 33px
-      background-image url('../images/icons.png')
+      top 1.5rem
+      width 3rem
+      height 3rem
       background-repeat no-repeat
+      background-size contain
 
     &.about:before
-      background-position 0 4px
+      background-image url("../images/about.png")
 
     &.education:before
-      background-position 0 -79px
+      background-image url("../images/education.png")
 
     &.experience:before
-      background-position 0 -164px
+      background-image url("../images/experience.png")
 
     &.skills:before
-      background-position 0 -248px
+      background-image url("../images/skills.png")
