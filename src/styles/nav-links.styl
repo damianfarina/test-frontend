@@ -1,9 +1,9 @@
 ul.nav-links
   @extend .unstyled-list
+  background-color sidebar-bg-color
 
   li
     border-bottom border-specs
-    padding-left sidebar-padding
     transition transitions-delay
     opacity 0.4
 
@@ -18,8 +18,11 @@ ul.nav-links
     box-sizing border-box
     width 100%
     padding 2rem
-    padding-left 5rem
+    padding-left "calc(%s + 4rem)" % sidebar-padding
     padding-right 5px
+
+    +below(mobile-threshold)
+      padding-left "calc(%s + 4rem)" % 5%
 
     color menu-link-color
     font-size font-size-big
@@ -28,7 +31,7 @@ ul.nav-links
     &:before
       content ""
       position absolute
-      left 0
+      left 5%
       top 1.5rem
       width 3rem
       height 3rem

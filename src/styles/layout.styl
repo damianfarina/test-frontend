@@ -1,11 +1,18 @@
 .container
+  position relative
   lost-utility clearfix
+  +below(mobile-threshold)
+    padding-bottom 250px
 
 .sidebar
   lost-column 4/12 12 0
+  +below(mobile-threshold)
+    lost-column 1/1 1 0
 
 .sidebar:before
   lost-column 4/12 12 0
+  +below(mobile-threshold)
+    display none
 
 .sidebar:before
   content ''
@@ -19,6 +26,8 @@
   lost-column 8/12 12 0
   box-sizing border-box
   padding 10px 5%
+  +below(mobile-threshold)
+    lost-column 1/1 1 0
 
 .cols-4
   lost-utility clearfix
