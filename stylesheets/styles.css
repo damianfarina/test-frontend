@@ -176,6 +176,7 @@ th {
   padding: 0;
 }
 .container {
+  position: relative;
   *zoom: 1;
 }
 .container:before {
@@ -186,6 +187,11 @@ th {
   content: '';
   display: table;
   clear: both;
+}
+@media only screen and (max-width: 480px) {
+  .container {
+    padding-bottom: 250px;
+  }
 }
 .sidebar {
   width: calc(99.999999% * 4/12);
@@ -204,6 +210,25 @@ th {
 .sidebar:nth-child(12n + 1) {
   clear: left;
 }
+@media only screen and (max-width: 480px) {
+  .sidebar {
+    width: calc(99.999999% * 1/1);
+  }
+  .sidebar:nth-child(n) {
+    float: left;
+    margin-right: 0;
+    clear: none;
+  }
+  .sidebar:last-child {
+    margin-right: 0;
+  }
+  .sidebar:nth-child(1n) {
+    margin-right: 0;
+  }
+  .sidebar:nth-child(1n + 1) {
+    clear: left;
+  }
+}
 .sidebar:before {
   width: calc(99.999999% * 4/12);
 }
@@ -220,6 +245,11 @@ th {
 }
 .sidebar:before:nth-child(12n + 1) {
   clear: left;
+}
+@media only screen and (max-width: 480px) {
+  .sidebar:before {
+    display: none;
+  }
 }
 .sidebar:before {
   content: '';
@@ -247,6 +277,25 @@ th {
 }
 .content:nth-child(12n + 1) {
   clear: left;
+}
+@media only screen and (max-width: 480px) {
+  .content {
+    width: calc(99.999999% * 1/1);
+  }
+  .content:nth-child(n) {
+    float: left;
+    margin-right: 0;
+    clear: none;
+  }
+  .content:last-child {
+    margin-right: 0;
+  }
+  .content:nth-child(1n) {
+    margin-right: 0;
+  }
+  .content:nth-child(1n + 1) {
+    clear: left;
+  }
 }
 .cols-4,
 .languages,
@@ -402,9 +451,11 @@ ul.list li:before {
 .boxes .box:last-child {
   border-right: none;
 }
+ul.nav-links {
+  background-color: #fafafa;
+}
 ul.nav-links li {
   border-bottom: 1px solid #dad9da;
-  padding-left: 11%;
   -webkit-transition: 200ms;
   transition: 200ms;
   opacity: 0.4;
@@ -426,16 +477,21 @@ ul.nav-links a {
   box-sizing: border-box;
   width: 100%;
   padding: 2rem;
-  padding-left: 5rem;
+  padding-left: calc(11% + 4rem);
   padding-right: 5px;
   color: #000;
   font-size: 1.2rem;
   font-weight: 700;
 }
+@media only screen and (max-width: 480px) {
+  ul.nav-links a {
+    padding-left: calc(5% + 4rem);
+  }
+}
 ul.nav-links a:before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 5%;
   top: 1.5rem;
   width: 3rem;
   height: 3rem;
@@ -456,6 +512,17 @@ ul.nav-links a.skills:before {
 }
 footer {
   padding: 11%;
+}
+@media only screen and (max-width: 480px) {
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fafafa;
+  }
 }
 footer .contact a {
   position: relative;
@@ -495,10 +562,8 @@ footer .contact a.github:before {
 }
 .legend li {
   display: inline-block;
-  padding-right: 30px;
-  padding-left: 5px;
+  padding: 0.3rem 2rem 0.3rem 30px;
   position: relative;
-  padding-left: 30px;
 }
 .legend li:before {
   content: "";
@@ -544,27 +609,32 @@ a {
   color: #646261;
   font-weight: 700;
 }
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 580px) {
   html {
     font-size: 6px;
   }
 }
-@media only screen and (min-width: 620px) and (max-width: 680px) {
+@media only screen and (min-width: 580px) and (max-width: 680px) {
   html {
     font-size: 7px;
   }
 }
 @media only screen and (min-width: 680px) and (max-width: 720px) {
   html {
-    font-size: 8px;
-  }
-}
-@media only screen and (min-width: 720px) and (max-width: 800px) {
-  html {
     font-size: 9px;
   }
 }
-@media only screen and (min-width: 800px) and (max-width: 860px) {
+@media only screen and (min-width: 720px) and (max-width: 860px) {
   html {
     font-size: 10px;
   }
@@ -610,7 +680,7 @@ a {
 .summary .avatar img {
   width: 60%;
   border-radius: 50%;
-  margin: 18% 18% 10px;
+  margin: 5rem 18% 2rem;
 }
 .summary .avatar .flag {
   position: absolute;
