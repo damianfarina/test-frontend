@@ -20,23 +20,25 @@ ul.nav-links
     padding 2rem
     padding-left "calc(%s + 4rem)" % sidebar-padding
     padding-right 5px
-
-    +below(mobile-threshold)
-      padding-left "calc(%s + 4rem)" % 5%
-
     color menu-link-color
     font-size font-size-big
     font-weight 700
 
+    +below(mobile-threshold)
+      padding-left "calc(%s + 4rem)" % 5%
+
     &:before
       content ""
       position absolute
-      left 5%
+      left sidebar-padding
       top 1.5rem
       width 3rem
       height 3rem
       background-repeat no-repeat
       background-size contain
+
+      +below(mobile-threshold)
+        left 5%
 
     &.about:before
       background-image url("../images/about.png")

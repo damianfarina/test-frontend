@@ -1,33 +1,33 @@
 .container
   position relative
+  height 100vh
+  overflow hidden
   lost-utility clearfix
   +below(mobile-threshold)
     padding-bottom 250px
+    overflow visible
+    height auto
 
 .sidebar
   lost-column 4/12 12 0
+  height 100vh
+  overflow auto
+  // padding-bottom 250px
   +below(mobile-threshold)
     lost-column 1/1 1 0
-
-.sidebar:before
-  lost-column 4/12 12 0
-  +below(mobile-threshold)
-    display none
-
-.sidebar:before
-  content ''
-  position fixed
-  top 0
-  bottom 0
-  z-index -1
-  left 0
+    overflow visible
+    height auto
 
 .content
   lost-column 8/12 12 0
+  height 100vh
+  overflow auto
   box-sizing border-box
   padding 10px 5%
   +below(mobile-threshold)
     lost-column 1/1 1 0
+    overflow visible
+    height auto
 
 .cols-4
   lost-utility clearfix
