@@ -1,2 +1,3 @@
 $ ->
-  console.log("DOM is ready")
+  $('#fullscreen-toggle').on "click", ->
+    $('.container').toggleClass('fullscreen')
