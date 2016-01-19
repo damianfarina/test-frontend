@@ -177,6 +177,8 @@ th {
 }
 .container {
   position: relative;
+  height: 100vh;
+  overflow: hidden;
   *zoom: 1;
 }
 .container:before {
@@ -191,10 +193,14 @@ th {
 @media only screen and (max-width: 480px) {
   .container {
     padding-bottom: 250px;
+    overflow: visible;
+    height: auto;
   }
 }
 .sidebar {
   width: calc(99.999999% * 4/12);
+  height: 100vh;
+  overflow: auto;
 }
 .sidebar:nth-child(n) {
   float: left;
@@ -213,6 +219,8 @@ th {
 @media only screen and (max-width: 480px) {
   .sidebar {
     width: calc(99.999999% * 1/1);
+    overflow: visible;
+    height: auto;
   }
   .sidebar:nth-child(n) {
     float: left;
@@ -229,38 +237,10 @@ th {
     clear: left;
   }
 }
-.sidebar:before {
-  width: calc(99.999999% * 4/12);
-}
-.sidebar:before:nth-child(n) {
-  float: left;
-  margin-right: 0;
-  clear: none;
-}
-.sidebar:before:last-child {
-  margin-right: 0;
-}
-.sidebar:before:nth-child(12n) {
-  margin-right: 0;
-}
-.sidebar:before:nth-child(12n + 1) {
-  clear: left;
-}
-@media only screen and (max-width: 480px) {
-  .sidebar:before {
-    display: none;
-  }
-}
-.sidebar:before {
-  content: '';
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  left: 0;
-}
 .content {
   width: calc(99.999999% * 8/12);
+  height: 100vh;
+  overflow: auto;
   box-sizing: border-box;
   padding: 10px 5%;
 }
@@ -281,6 +261,8 @@ th {
 @media only screen and (max-width: 480px) {
   .content {
     width: calc(99.999999% * 1/1);
+    overflow: visible;
+    height: auto;
   }
   .content:nth-child(n) {
     float: left;
@@ -491,12 +473,17 @@ ul.nav-links a {
 ul.nav-links a:before {
   content: "";
   position: absolute;
-  left: 5%;
+  left: 11%;
   top: 1.5rem;
   width: 3rem;
   height: 3rem;
   background-repeat: no-repeat;
   background-size: contain;
+}
+@media only screen and (max-width: 480px) {
+  ul.nav-links a:before {
+    left: 5%;
+  }
 }
 ul.nav-links a.about:before {
   background-image: url("../images/about.png");
@@ -512,6 +499,7 @@ ul.nav-links a.skills:before {
 }
 footer {
   padding: 11%;
+  box-sizing: border-box;
 }
 @media only screen and (max-width: 480px) {
   footer {
@@ -659,7 +647,7 @@ a {
     font-size: 16px;
   }
 }
-.sidebar:before {
+.sidebar {
   background-color: #fafafa;
 }
 .summary {
