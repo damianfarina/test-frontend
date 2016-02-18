@@ -483,7 +483,6 @@ ul.nav-links li {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
   filter: alpha(opacity=40);
 }
-ul.nav-links li.active,
 ul.nav-links li:hover {
   -webkit-transition: 200ms;
   transition: 200ms;
